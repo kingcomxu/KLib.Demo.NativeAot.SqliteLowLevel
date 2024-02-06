@@ -5,10 +5,10 @@ pinvoke
 static lib
 sqlite lowlevel api
 
-ÑİÊ¾.net nativeaot ¾²Ì¬Á´½ÓSQLite.lib²¢½øĞĞapiµ÷ÓÃ
-Îªµ÷ÓÃwechat½ø³ÌÀïµÄsqlite functions×ö×¼±¸
+æ¼”ç¤º.net nativeaot é™æ€é“¾æ¥SQLite.libå¹¶è¿›è¡Œapiè°ƒç”¨
+ä¸ºè°ƒç”¨wechatè¿›ç¨‹é‡Œçš„sqlite functionsåšå‡†å¤‡
 
-°üÀ¨ÒÔÏÂµ÷ÓÃ²âÊÔ
-sqlite3_execºÍcallback
-sqlite3_get_table
-sqlite3_prepare ½øĞĞblobĞ´ÈëºÍ¶ÁÈ¡
+åŒ…æ‹¬ä»¥ä¸‹è°ƒç”¨æµ‹è¯•
+- sqlite3_execå’Œcallback
+- sqlite3_get_table
+- sqlite3_prepare è¿›è¡Œblobå†™å…¥å’Œè¯»å–
