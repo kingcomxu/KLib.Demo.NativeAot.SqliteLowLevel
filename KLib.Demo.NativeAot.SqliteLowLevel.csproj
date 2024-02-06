@@ -11,6 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove=".gitattributes" />
+    <None Remove=".gitignore" />
     <None Remove="a.png" />
     <None Remove="b.ico" />
     <None Remove="KLib.Demo.NativeAot.SqliteLowLevel.exe" />
