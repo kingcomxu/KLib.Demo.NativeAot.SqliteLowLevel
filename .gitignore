@@ -362,3 +362,7 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /KLib.Demo.NativeAot.SqliteLowLevel.exe
+/KLib.Demo.NativeAot.SqliteLowLevel.csproj
+/read-blob-result-name-0.png
+/read-blob-result-name-1.png
+/test.db
