@@ -5,8 +5,8 @@
     },
     "Profile 1": {
       "commandName": "Executable",
-      "executablePath": "D:\\MyWorks\\TestSqlite\\TestSqlite\\bin\\Debug\\net8.0\\publish\\win-x64\\TestSqlite.exe",
-      "workingDirectory": "D:\\MyWorks\\TestSqlite\\TestSqlite\\bin\\Debug\\net8.0\\publish\\win-x64",
+      "executablePath": ".\\KLib.Demo.NativeAot.SqliteLowLevel.exe",
+      "workingDirectory": ".\\",
       "nativeDebugging": true
     }
   }
