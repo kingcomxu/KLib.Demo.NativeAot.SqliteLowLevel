@@ -88,6 +88,10 @@ public unsafe class Sqlite3
     //SQLITE_API const char* sqlite3_errmsg(sqlite3 *);
     [DllImport("SQLite3")]
     public static extern nint sqlite3_errmsg(void* pDb);
+    //int sqlite3_errcode(sqlite3 *db);
+    [DllImport("SQLite3")]
+    public static extern int sqlite3_errcode(void* pDb);
+
 
     //SQLITE_API void sqlite3_free(void*);
     [DllImport("SQLite3")]
@@ -128,7 +132,9 @@ public unsafe class Sqlite3
     public static unsafe extern int sqlite3_bind_blob(void* pStmt, int sqlParameterIndex, void* pData, int nByteLen, void* callback);
 
 
-
+    //int sqlite3_column_count(sqlite3_stmt* pStmt);
+    [DllImport("SQLite3")]
+    public static unsafe extern int sqlite3_column_count(void* pStmt);
 
     //int sqlite3_bind_double(sqlite3_stmt*, int, double);
     [DllImport("SQLite3")]

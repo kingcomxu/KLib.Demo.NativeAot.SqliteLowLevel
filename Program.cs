@@ -35,7 +35,8 @@ internal class Program
             var errMsg = Marshal.PtrToStringUTF8(ptrErrMsg);
             Console.WriteLine($"open result:0x{result:X},  Can't open database: {errMsg}");
         }
-
+         
+        Console.ReadKey();
 
         string sql = "CREATE TABLE COMPANY( ID INT PRIMARY KEY NOT NULL, NAME TEXT    NOT NULL, AGE INT NOT NULL, ADDRESS CHAR(50), SALARY REAL );";
 
@@ -287,6 +288,38 @@ internal class Program
 
 
         Console.ReadKey();
+    }
+
+    static unsafe void GetDbTables(void* pDb)
+    {
+        string sql = "select * from sqlite_master where type='table';";
+
+        void* stmt;
+        var ptrSql = Marshal.StringToCoTaskMemUTF8(sql);
+        var result = Sqlite3.sqlite3_prepare(pDb, (void*)ptrSql, -1, &stmt, (void**)0);
+        Marshal.FreeCoTaskMem(ptrSql);
+        Console.WriteLine($"sqlite3_prepare result:{result}, result == sqlite_OK: {result == Sqlite3.SQLITE_OK}");
+        if (result != Sqlite3.SQLITE_OK)
+        {
+            var errCode  = Sqlite3.sqlite3_errcode(pDb);
+            Console.WriteLine($"sqlite3_prepare Error:{errCode}");
+        }
+         
+        while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+        {
+
+            var nCol = Sqlite3.sqlite3_column_count(stmt);
+
+            for(int i = 0; i < nCol; i++)
+            {
+                var ptrColTextValue = Sqlite3.sqlite3_column_blob(stmt, i);
+                var colTxtValue = Marshal.PtrToStringUTF8((nint)ptrColTextValue);
+                Console.WriteLine(colTxtValue); 
+            } 
+        }
+
+        Sqlite3.sqlite3_finalize(stmt);
+
     }
 
     static unsafe int callback(nint ptrData, int colCount, byte** colValues, byte** colNames)
